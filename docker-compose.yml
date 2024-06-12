@@ -1,0 +1,22 @@
+services:
+    back:
+        extends:
+            service: main
+            file: back/docker-compose.yml
+        container_name: fullstack_back
+
+    db:
+        extends:
+            service: db
+            file: back/docker-compose.yml
+        container_name: fullstack_db
+
+    front:
+        extends:
+            service: main
+            file: front/docker-compose.yml
+        depends_on:
+            -   back
+        container_name: fullstack_front
+        links:
+            -   back
