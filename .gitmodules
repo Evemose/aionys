@@ -1,0 +1,9 @@
+[submodule "back"]
+	path = back
+	url = https://github.com/Evemose/aionys_back.git
+[submodule "front"]
+	path = front
+	url = https://github.com/Evemose/aionys_front.git
+[submodule "frot"]
+	path = frot
+	url = https://github.com/Evemose/aionys_back.git
