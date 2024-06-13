@@ -58,6 +58,10 @@ cd ..
 
 Ensure the `.env` files contain the necessary environment variables. Modify values as needed for your setup.
 
+### Important Note
+
+When running the front-end in Docker (or in any environment where frontend and backend apps run on different hosts), set `NEXT_PUBLIC_ACTIVE_PROFILE` and `SPRING_PROFILE_ACTIVE` to `dev` in corresponding `.env` files due to specifics of cross-origin cookie sharing requiring HTTPS communication for `SameSite=None` cookies that are used for authentication.
+
 ### 3. Run the Entire Application
 
 To run the entire application, including both submodules, use the `docker-compose.yml` file located in the project root:
@@ -65,10 +69,6 @@ To run the entire application, including both submodules, use the `docker-compos
 ```sh
 docker-compose up --build
 ```
-
-### Important Note
-
-When running the front-end in Docker (or anywhere not on localhost), set `NEXT_PUBLIC_ACTIVE_PROFILE` to `dev` in your `.env` file due to specifics of cross-origin cookie sharing requiring HTTPS communication for `SameSite=None` cookies used for authentication.
 
 ## Optional: Run Submodules Individually
 
