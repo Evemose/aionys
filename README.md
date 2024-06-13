@@ -1,6 +1,6 @@
 ### Parent Repository README
 
-# Project Name
+# Notes service
 
 ## Overview
 
@@ -60,7 +60,7 @@ Ensure the `.env` files contain the necessary environment variables. Modify valu
 
 ### Important Note
 
-When running the front-end in Docker (or in any environment where frontend and backend apps run on different hosts), set `NEXT_PUBLIC_ACTIVE_PROFILE` and `SPRING_PROFILE_ACTIVE` to `dev` in corresponding `.env` files due to specifics of cross-origin cookie sharing requiring HTTPS communication for `SameSite=None` cookies that are used for authentication.
+When running the front-end in Docker (or in any environment where frontend and backend apps run on different hosts), set `NEXT_PUBLIC_ACTIVE_PROFILE` and `SPRING_PROFILE_ACTIVE` to `dev` in corresponding `.env` files due to specifics of cross-origin cookie sharing requiring HTTPS communication for `SameSite=None` cookies that are used for authentication. In `dev` profile, tokens are also sent in response body for login request, and stored on client in `localStorage` along with cookies. This is not safe and should not be used in production, but does the trick for local development. For production, concider using HTTPS communication instead of HTTP, and disable `dev` profile. This will disable localStorage-based auth.
 
 ### 3. Run the Entire Application
 
